@@ -4,7 +4,9 @@
 \usepackage[latin1]{inputenc}
 \usepackage{hyperref}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \usepackage{ngerman}
+\usepackage{graphicx}
 
 % the document
 \begin{document}
@@ -40,6 +42,32 @@ $\mathbf{q} = (\cos(\alpha/2), \mathbf{v_x} \sin(\alpha/2), \mathbf{v_y} \sin(\a
 $p_1 \mapsto q_{p1} = (0, p_1) = x_1i + y_1j + z_1k$. \\
 $p_2 \mapsto q_{p2} = (0, p_2) = x_2i + y_2j + z_2k$. \\
 $q_{p2} = \mathbf{q} q_{p1} \mathbf{q^{-1}}$.
+
 \section*{Exercise 2}
+Composite transformation can be created as a multiplication of every transformation matrix in the corresponding order.\\
+\medskip
+
+\textbf{(a)} Derive a matrix $M_1$ which first rotates the point $\alpha$ degrees ($\alpha$ is given in radians) around the axis $\begin{pmatrix}0 & 0 & 1\end{pmatrix}$ and then performs a translation with an offset of $\begin{pmatrix}t_1 & t_2 & t_3\end{pmatrix}^T$. \\
+$M_1 = \begin{pmatrix}\cos{\alpha} & -\sin{\alpha} & 0 & 0\\ \sin{\alpha} & \cos{\alpha} & 0 & 0\\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} 
+\begin{pmatrix}1 & 0 & 0 & t_1\\ 0 & 1 & 0 & t_2\\ 0 & 0 & 1 & t_3\\ 0 & 0 & 0 & 1\end{pmatrix} = \\ =
+\begin{pmatrix}\cos{\alpha} & -\sin{\alpha} & 0 & t_1\cos{\alpha} - t_2\sin{\alpha}\\ \sin{\alpha} & \cos{\alpha} & 0 & t_1\sin{\alpha} + t_2\cos{\alpha}\\ 0 & 0 & 1 & t_3 \\ 0 & 0 & 0 & 1 \end{pmatrix}$\\ 
+\medskip
+
+\textbf{(b)} Derive a matrix $M_1$ which performs a translation with an offset of $\begin{pmatrix}t_1 & t_2 & t_3\end{pmatrix}^T$ and then rotates the point $\alpha$ degrees ($\alpha$ is given in radians) around the axis $\begin{pmatrix}0 & 0 & 1\end{pmatrix}$. \\
+$M_2 = \begin{pmatrix}1 & 0 & 0 & t_1\\ 0 & 1 & 0 & t_2\\ 0 & 0 & 1 & t_3\\ 0 & 0 & 0 & 1\end{pmatrix}
+\begin{pmatrix}\cos{\alpha} & -\sin{\alpha} & 0 & 0\\ \sin{\alpha} & \cos{\alpha} & 0 & 0\\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{pmatrix} = \\ =
+\begin{pmatrix}\cos{\alpha} & -\sin{\alpha} & 0 & t_1\\ \sin{\alpha} & \cos{\alpha} & 0 & t_2\\ 0 & 0 & 1 & t_3 \\ 0 & 0 & 0 & 1 \end{pmatrix}$ \\
+\medskip
+
+\textbf{(c)} In which way affects the order of operations the respective final transformation matrix in this case? \\
+The importance of operations order can be shown on this picture:\\
+\begin{figure}[h]
+\includegraphics[scale=0.4]{img1}
+\centering
+\caption{Visualistion of transformations in different order}
+\end{figure}
+
+The order of transformations affects the final matrix, because matrix multiplication is not commutative. That is why in the second case(rotation first) the final matrix is just a composition of two (everything gets multiplied by 1),
+and in the first case the final matrix gets a bit more complicated and the translation part of the matrix changes its $x$ and $y$ values. If for example the rotation was around $y$ axis, then $x-$ and $z-$translations would be affected.  
 
 \end{document}
