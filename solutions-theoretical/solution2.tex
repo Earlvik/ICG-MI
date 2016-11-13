@@ -1,0 +1,45 @@
+% header
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{ngerman}
+
+% the document
+\begin{document}
+
+% create the title
+% Please replace the data in brackets [] with actual data.
+\title{Abgabe - Übungsblatt 2\\
+\small{Einführung in die Computergraphik und Visualisierung}}
+\author{ Svetlana Shishkovets \and Tran Linn Chi \and Viktor Lopatin}
+\date{\today}
+\maketitle
+
+\section*{Exercise 1}
+Point $p$ can be embedded in a quaternion as \\
+$p \mapsto q_p = (0, p) = xi + yj + zk$. \\
+\medskip
+
+\textbf{(a)} Give a formula to determine the angle of rotation $\alpha$.\\
+The angle of rotation is an angle between $\vec{p_1}$ and $\vec{p_2}$, where $\vec{p} = p - O$ and $O$ is the center of coordinates. \\
+$\alpha = \arccos{\bigg(\frac{\vec{p_1}\cdot\vec{p_2}}{\|\vec{p_1}\|\|\vec{p_2}\|}\bigg)}$\\
+\medskip
+
+\textbf{(b)} Give a formula to detemine the rotation axis \textbf{v}.\\
+Rotation axis \textbf{v} is perpendicular to $\vec{p_1}$ and $\vec{p_2}$ and goes through the coordinates center. Therefore, it is the normalized cross-product of the two vectors.\\
+$\mathbf{v} = \frac{\vec{p_1} \times \vec{p_2}}{\|\vec{p_1} \times \vec{p_2}\|}$.\\
+\medskip
+
+\textbf{(c)} Write down the quaternion \textbf{q} which performs the rotation with angle $\alpha$ around \textbf{v}.\\
+$\mathbf{q} = (\cos(\alpha/2), \mathbf{v_x} \sin(\alpha/2), \mathbf{v_y} \sin(\alpha/2), \mathbf{v_z} \sin(\alpha/2))$.\\ 
+\medskip
+
+\textbf{(d)} Write down the relationship between $p_1$ and $p_2$ using quaternion multiplication. \\
+$p_1 \mapsto q_{p1} = (0, p_1) = x_1i + y_1j + z_1k$. \\
+$p_2 \mapsto q_{p2} = (0, p_2) = x_2i + y_2j + z_2k$. \\
+$q_{p2} = \mathbf{q} q_{p1} \mathbf{q^{-1}}$.
+\section*{Exercise 2}
+
+\end{document}
