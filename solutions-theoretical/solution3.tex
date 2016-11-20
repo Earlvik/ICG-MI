@@ -32,7 +32,71 @@ We will use ideas, similar to the lecture. \\
 \includegraphics[scale=0.3]{1}
 \end{figure}\\
 $\vartriangle(A;(0; y);(x; y))\sim \vartriangle(A;(0;0);(0; x'))\Rightarrow$\\
-$\frac{x'}{x}=\frac{y_0}{y+y_0} \Leftrightarrow x'=\frac{y_0x}{y+y_0}$  
+$\frac{x'}{x}=\frac{y_0}{y+y_0} \Leftrightarrow x'=\frac{y_0x}{y+y_0}$  \\
+
+$\begin{pmatrix}
+x\\
+y\\
+\end{pmatrix}
+\longmapsto
+\begin{pmatrix}
+x\\
+y\\
+\end{pmatrix}
+-\frac{y}{y+y_0}
+\begin{pmatrix}
+x\\
+y+y_0\\
+\end{pmatrix}$\\
+Let's represent with the a homogenious 3x3 matrix:\\
+$\begin{pmatrix}
+x'\\
+y'\\
+1\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+y_0 & 0& 0\\
+0 & 0& 0\\
+0 & 1& y_0\\
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+1\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0& 0\\
+0 & 0& 0\\
+0 & \frac{1}{y_0}&1\\
+\end{pmatrix}
+\begin{pmatrix}
+x\\
+y\\
+1\\
+\end{pmatrix}
+$\\
+We can decompose it into two mappings:  a perspective transformation followed by a parallel projection:\\
+\\
+$\begin{pmatrix}
+1 & 0& 0\\
+0 & 0& 0\\
+0 & \frac{1}{y_0}&1\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0& 0\\
+0 & 0& 0\\
+0 & 0&1\\
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0& 0\\
+0 & 1& 0\\
+0 & \frac{1}{y_0}&1\\
+\end{pmatrix}
+$\\
+Where left matrix is parallel projection and right perspective transformation.
 \section*{Third Exercise}
 Quternions $q$ and $-q$ represent the same rotation, and it can be show by reproducing the calculation of the rotation axis and angle. \\
 For $-q$ the rotation of point $p$ will be written as $p'=q^{-1}pq$. \\
