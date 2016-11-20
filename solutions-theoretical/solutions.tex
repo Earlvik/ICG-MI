@@ -1,25 +1,38 @@
 % header
-\documentclass[10pt,a4paper]{article}
 
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath,mathrsfs,mathtext} 
 \usepackage[latin1]{inputenc}
 \usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{ngerman}
-
+\usepackage{graphicx, epsfig} 
 % the document
 \begin{document}
 
 % create the title
 % Please replace the data in brackets [] with actual data.
-\title{Abgabe - Übungsblatt 2\\
+\title{Abgabe - Übungsblatt [$3$]\\
 \small{Einführung in die Computergraphik und Visualisierung}}
-\author{ Svetlana Shishkovets \and Tran Linn Chi \and Viktor Lopatin}
+\author{ [Svetlana Shishkovets] \and [Victor Lopatin] \and [Lihn Chi Tran]}
 \date{\today}
 \maketitle
 
-\section*{Exercise 1}
+\section*{First Exercise}
+\begin{itemize}
+\item (a) $p_1,p_2 \in P(\mathbb {R}^3)$\\
+Remember that $(a,b,c,d)^T= (\frac{a}{d},\frac{b}{d},\frac{c}{d})^T$ if $d\neq 0, \Rightarrow$\\
+$p_1=(\frac{14}{2},\frac{3}{2},\frac{4}{2}) =(7,1.5,2) $,\\
+$p_2=(\frac{12}{3},\frac{0}{3},\frac{3}{3}) =(6,0,1) $ 
+\item (b) Since we cannot divide by 0(otherwise we will get vector of infinite length), we cannot represent in $\mathbb {R}^3 (a,b,c,0)$ 
+\end{itemize}
+\section*{Second Exercise}
+We will use ideas, similar to the lecture. \\
+\begin{figure}[h]
+\includegraphics[scale=0.3]{1}
+\end{figure}\\
+$\vartriangle(A;(0; y);(x; y))\sim \vartriangle(A;(0;0);(0; x'))\Rightarrow$\\
+$\frac{x'}{x}=\frac{y_0}{y+y_0} \Leftrightarrow x'=\frac{y_0x}{y+y_0}$  
 
-
-\section*{Exercise 2}
 
 \end{document}
